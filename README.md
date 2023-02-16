@@ -47,6 +47,25 @@ Built with Golang, JWT, GORM, Gin Gonic, Postgres
     curl -X GET \
         http://localhost:3000/api/users/me
 
+## Forgot Password
+
+    curl -X POST \
+        http://localhost:3000/api/auth/forgotpassword \
+        -H 'Content-Type: application/json' \
+        -d '{
+                "email":"test@gmail.com"
+            }'
+
+## Reset Password
+
+    curl -X PATCH \
+        http://localhost:3000/api/auth/resetpassword/{token} \
+        -H 'Content-Type: application/json' \
+        -d '{
+                "password":"testtest",
+                "passwordConfirm":"testtest"
+            }'
+
 ## Logout
 
     curl -X GET \
